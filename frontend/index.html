@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VaultDrop — File Upload</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">▲</span>
+        <span class="brand-name">VaultDrop</span>
+      </div>
+      <span class="tagline">Drop it. Track it. Access it.</span>
+    </header>
+
+    <main class="main">
+      <section class="upload-card">
+        <div id="dropzone" class="dropzone">
+          <input type="file" id="fileInput" hidden />
+          <div class="dropzone-content">
+            <div class="dropzone-icon">⬆</div>
+            <p class="dropzone-title">Drag &amp; drop a file here</p>
+            <p class="dropzone-sub">or <span class="browse-link" id="browseLink">browse from device</span></p>
+            <p class="dropzone-hint">Images, PDF, DOC, DOCX, TXT — up to 5MB</p>
+          </div>
+        </div>
+
+        <div id="previewArea" class="preview-area hidden">
+          <div class="preview-row">
+            <div id="previewThumb" class="preview-thumb"></div>
+            <div class="preview-info">
+              <p id="previewName" class="preview-name"></p>
+              <p id="previewMeta" class="preview-meta"></p>
+              <div class="progress-track">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+              <p id="progressLabel" class="progress-label">Ready to upload</p>
+            </div>
+            <button id="cancelBtn" class="icon-btn" title="Remove">✕</button>
+          </div>
+
+          <div class="preview-actions">
+            <button id="uploadBtn" class="btn-primary">Upload File</button>
+          </div>
+
+          <p id="errorMsg" class="error-msg hidden"></p>
+        </div>
+      </section>
+
+      <section class="gallery-section">
+        <div class="gallery-header">
+          <h2>Uploaded Files</h2>
+          <span id="fileCount" class="file-count">0 files</span>
+        </div>
+        <div id="gallery" class="gallery"></div>
+        <p id="emptyState" class="empty-state">No files uploaded yet. Your uploads will appear here.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
